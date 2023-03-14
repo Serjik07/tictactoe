@@ -13,8 +13,8 @@ let result = {
     "x":0,
     "o":0,
 }
-// console.log(result.x)
-let side = 90;
+
+let side = 100;
 
 
 function mouseClicked() {
@@ -23,7 +23,8 @@ function mouseClicked() {
         let oY = Math.round(Math.random() * 2);
         if(matrix[Math.floor(mouseY / side)][Math.floor(mouseX / side)] === 0) {
             matrix[Math.floor(mouseY / side)][Math.floor(mouseX / side)] = "X";
-            stugum()
+            stugum();
+
             for(let y = 1;y < matrix.length; y++) {
                 for (let x = 0; x < matrix[y].length; x++) {
                     if(title.innerHTML == ""){
@@ -40,11 +41,6 @@ function mouseClicked() {
                 }
             }
         }
-        
-        
-        //console.log(matrix)
-        
-        
     }
 }
 btn.addEventListener("click", refreash);
@@ -92,7 +88,6 @@ function stugum() {
     } else if(matrix[2][0] == "X" && matrix[2][1] == "X" && matrix[2][2] == "X"){
         title.innerHTML = "X is winner";
     }
-    // console.log(result.x)
 }
 function setup() {
     frameRate(60);
@@ -112,15 +107,9 @@ function draw() {
         } else if(title.innerHTML == "O is winner") {
             result.o++;
         }
-        // console.log(result.o)
         noLoop();
     }
-    
-        // for(let y = 0;y < matrix.length; y++) {
-        //     if(!(0 in matrix)) {
-        //         title.innerHTML = "Drow"
-        //     }
-        // }
+
     resultHx.innerHTML = `X:${result.x}`
     resultHo.innerHTML = `O:${result.o}`
     for(let y = 0;y < matrix.length; y++) {

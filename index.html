@@ -9,10 +9,28 @@
         *{
             padding: 0;
             margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 60px 20px;
+            width: 340px;
+            gap: 50px;
         }
 
         #canvas{
-            height: 70vh;
+            height: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -22,26 +40,27 @@
         }
         
         #winner{
-            text-align: center;
             color: rgb(144, 146, 150);
             -webkit-text-stroke: 2px black; 
             font-size: 40px;
+            width: 100%;
+            text-align: center;
         }
         #result{
-            margin-left: 235px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            height: 70px;
+            padding: 5px;
             width: 100px;
             border-radius: 10px;
             background-color: rgb(144, 146, 150);
             letter-spacing: 4px;
         }
-        .down{
+        body > .container > .down{
+            width: 300px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
         }
         .btn{
             display: flex;
@@ -52,19 +71,20 @@
             align-items: center;
         }
         button{
-            margin-left: 0;
-            padding: 10px 20px;
             cursor: pointer;
-            background-color: rgb(144, 146, 150);
-            border: 1px solid white;
+            padding: 0 25px;
+            height: 66px;
+            background: rgb(144, 146, 150);
             border-radius: 5px;
             color:black;
-            font-size: 1em;
-            text-align: center;
-            transition: all 0.3s;
+            border: none;
+            font-size: 1.2em;
+            font-family: sans-serif;
+            transition: all 0.5s;
         }
         button:hover{
-            padding: 5px 10px;
+            font-size: 1.2em;
+            transform: scale(0.95);
         }
         @media screen and (max-width: 466px) {
             #winner{
@@ -74,17 +94,18 @@
     </style>
 </head>
 <body>
-    <h1 id="winner"></h1>
-    <div id="canvas">
+    <div class="container">
+        <h1 id="winner"></h1>
+        <div id="canvas"></div>
 
-    </div>
-    <div class="down">
-        <div class="btn">
-            <button>Refresh</button>
-        </div>
-        <div id="result">
-            <h2 id="x">X:</h2>
-            <h2 id="o">O:</h2>
+        <div class="down">
+            <div class="btn">
+                <button>Refresh</button>
+            </div>
+            <div id="result">
+                <h2 id="x">X:</h2>
+                <h2 id="o">O:</h2>
+            </div>
         </div>
     </div>
 
