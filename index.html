@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Tio</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        #canvas{
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #canvas > canvas{
+            cursor: pointer;
+        }
+        
+        #winner{
+            text-align: center;
+            color: rgb(144, 146, 150);
+            -webkit-text-stroke: 2px black; 
+            font-size: 40px;
+        }
+        #result{
+            margin-left: 235px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 70px;
+            width: 100px;
+            border-radius: 10px;
+            background-color: rgb(144, 146, 150);
+            letter-spacing: 4px;
+        }
+        .down{
+            display: flex;
+            justify-content: center;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+        }
+        header{
+            display: flex;
+            align-items: center;
+        }
+        button{
+            margin-left: 0;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: rgb(144, 146, 150);
+            border: 1px solid white;
+            border-radius: 5px;
+            color:black;
+            font-size: 1em;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        button:hover{
+            padding: 5px 10px;
+        }
+        @media screen and (max-width: 466px) {
+            #winner{
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="winner"></h1>
+    <div id="canvas">
+
+    </div>
+    <div class="down">
+        <div class="btn">
+            <button>Refresh</button>
+        </div>
+        <div id="result">
+            <h2 id="x">X:</h2>
+            <h2 id="o">O:</h2>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js" defer></script>
+    <script src="tictactio.js" defer ></script>
+</body>
+</html>
