@@ -27,7 +27,7 @@ function mouseClicked() {
 
             for(let y = 1;y < matrix.length; y++) {
                 for (let x = 0; x < matrix[y].length; x++) {
-                    if(title.innerHTML == "Tic Tac Tio"){
+                    if(title.innerHTML == "Tic Tac Toe"){
                         if(matrix[y][x] === 0) {
                             while(matrix[oY][oX] !== 0){
                                 oX = Math.round(Math.random() * 2);
@@ -45,7 +45,7 @@ function mouseClicked() {
 }
 btn.addEventListener("click", refreash);
 function refreash() {
-    title.innerHTML = "Tic Tac Tio";
+    title.innerHTML = "Tic Tac Toe";
     matrix = [
         [0, 0, 0], 
         [0, 0, 0], 
@@ -101,7 +101,7 @@ function setup() {
 function draw() {
     background("white");
     stugum()
-    if(title.innerHTML !== "Tic Tac Tio") {
+    if(title.innerHTML !== "Tic Tac Toe") {
         if(title.innerHTML == "X is winner"){
             result.x++;
         } else if(title.innerHTML == "O is winner") {
